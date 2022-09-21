@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Challenge - Week4</title>
+</head>
+<body>
+    <script>
+        //Add 5 Function 
+        var numbers = [1,1,2,3,5];
+        function addFiveFunc(num) {
+            return num += 5;
+        }
+        var numbersAddFive = numbers.map(addFiveFunc);
+        console.log(numbersAddFive);
+        //Result: (5) [6, 6, 7, 8, 10]
+
+
+        var numbers = [245, -799, 550, 312, 967];
+        function stringsArrFunc(num, index) {
+            return num + ":array item " + ++index;
+        } 
+        var numbersReformatted = numbers.map(stringsArrFunc);
+        console.log(numbersReformatted);
+        //(5) ['245:array item 1', '-799:array item 2', '550:array item 3', '312:array item 4', '967:array item 5']
+
+    
+        var pets = ["goldfish", "dog", "turtle", "tiger"];
+        function petsFilterFunc(pet) {
+            return pet.length <= 5;
+        }
+        var petsShortNames = pets.filter(petsFilterFunc);
+        console.log(petsShortNames);
+        //(2) ['dog', 'tiger']
+
+
+        var pets = ["goldfish", "dog", "turtle", "tiger"];
+        function petsFilterFunc(pet) {
+            return pet.includes("t");
+        }
+        var petsShortNames = pets.filter(petsFilterFunc);
+        console.log(petsShortNames);
+        //(2) ['turtle', 'tiger']
+
+
+        var numbers = [3,7,4,5,10];
+        function evenNumFunc(num) {
+            return num % 2 === 0;
+        }
+        var evenNumbers = numbers.filter(evenNumFunc);
+        console.log(evenNumbers);
+        //(2) [4, 10]
+
+
+        var letters = ['h', 'e', 'l', 'l', 'o'];
+        function reduceFunc(prev, curr) {
+            return prev + curr;
+        }
+        var greeting = letters.reduce(reduceFunc);
+        console.log(greeting); 
+        //hello
+        
+        
+        var numbers = [100,3,4,1,2];
+        function totalNum(prev, curr) {
+            return prev * curr;
+        }
+        var total = numbers.reduce(totalNum);
+        console.log(total);
+        //2400
+
+
+        var arrays = [["wise","cries"],["pies","size"]];
+        function arrFunc(prev,curr) {
+            return prev.concat(curr);
+        }
+        var flattenedArray = arrays.reduce(arrFunc);
+        console.log(flattenedArray);
+        //(4) ['wise', 'cries', 'pies', 'size']
+    </script>
+</body>
+</html>
