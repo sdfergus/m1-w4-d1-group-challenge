@@ -8,77 +8,175 @@
 </head>
 <body>
     <script>
-        //Add 5 Function 
+        /*
+        // 1
+        // Using the map method, add 5 to each
+        number in the array and store the result into a
+        new array. Print the result to the console.
+        var numbers = [1, 1, 2, 3, 5];
+        var numbersAddFive = numbers.map();
+        // result: [6, 6, 7, 8, 10]
+        */ 
         var numbers = [1,1,2,3,5];
+        var numbersAddFive = numbers.map(addFiveFunc);
+        
         function addFiveFunc(num) {
             return num += 5;
         }
-        var numbersAddFive = numbers.map(addFiveFunc);
+        
         console.log(numbersAddFive);
         //Result: (5) [6, 6, 7, 8, 10]
 
+//__________________________________________________________________________________
 
+        /*
+        // 2
+        // Using the map method on the following array, turn it
+        into an array of strings with a colon along with the item
+        number in the array and store the result in a new array.
+        Print the result to the console.    
         var numbers = [245, -799, 550, 312, 967];
+        var numbersReformatted = numbers.map();
+        // result: ["245: array item 1", "-799: array item 2", "550:
+        array item 3", "312: array item 4", "967: array item 5"]
+        */
+        var numbers = [245, -799, 550, 312, 967];
+        var numbersReformatted = numbers.map(stringsArrFunc);
+        
         function stringsArrFunc(num, index) {
             return num + ":array item " + ++index;
         } 
-        var numbersReformatted = numbers.map(stringsArrFunc);
+        
         console.log(numbersReformatted);
-        //(5) ['245:array item 1', '-799:array item 2', '550:array item 3', '312:array item 4', '967:array item 5']
+        //Result: (5) ['245:array item 1', '-799:array item 2', '550:array item 3', '312:array item 4', '967:array item 5']
 
+//__________________________________________________________________________________
     
+        /*
+        // 3
+        // Use the filter method on the pets array given
+        below. Filter out only the pets that have 5 or
+        less letters in their name. Store the result in a
+        new array. Print the result to the console.
+        var pets = ["goldfish", "dog", "turtle", "tiger"]
+        var petsShortNames = pets.filter();
+        // result: ["dog", "tiger"]
+        */
         var pets = ["goldfish", "dog", "turtle", "tiger"];
+        var petsShortNames = pets.filter(petsFilterFunc);
+        
         function petsFilterFunc(pet) {
             return pet.length <= 5;
         }
-        var petsShortNames = pets.filter(petsFilterFunc);
+        
         console.log(petsShortNames);
-        //(2) ['dog', 'tiger']
+        //Result: (2) ['dog', 'tiger']
 
+//__________________________________________________________________________________
 
+        /*
+        // 4
+        // Use the filter method on the same pets array. Filter
+        out only the pets whose names start with the letter 't’.
+        Store the result in a new array. Print the result to the
+        console.
+        var petsTNames = pets.filter();
+        // result: ["turtle", "tiger"] 
+        */
         var pets = ["goldfish", "dog", "turtle", "tiger"];
+        var petsShortNames = pets.filter(petsFilterFunc);
+        
         function petsFilterFunc(pet) {
             return pet.includes("t");
         }
-        var petsShortNames = pets.filter(petsFilterFunc);
+        
         console.log(petsShortNames);
-        //(2) ['turtle', 'tiger']
+        //Result: (2) ['turtle', 'tiger']
 
+//__________________________________________________________________________________
 
+        /*
+        // 5
+        // Filter out only the even numbers from the array below. Research the
+        use of the modulo operator: %. Store the result in a new array. Print the
+        result to the console.
+        var numbers = [3, 7, 4, 5, 10];
+        var evenNumbers = numbers.filter();
+        // result: [4, 10]        
+        */
         var numbers = [3,7,4,5,10];
+        var evenNumbers = numbers.filter(evenNumFunc);
+        
         function evenNumFunc(num) {
             return num % 2 === 0;
         }
-        var evenNumbers = numbers.filter(evenNumFunc);
+        
         console.log(evenNumbers);
-        //(2) [4, 10]
+        //Result: (2) [4, 10]
 
+//__________________________________________________________________________________
 
+        /*
+        // 6
+        // Use reduce method to concatenate the
+        letters into a single string "hello". Store the
+        result in a new array. Print the result to the
+        console.
+        var letters = ['h', 'e', 'l', 'l', 'o’]
+        var greeting = letters.reduce();
+        // result: "hello"
+        */        
         var letters = ['h', 'e', 'l', 'l', 'o'];
+        var greeting = letters.reduce(reduceFunc);
+        
         function reduceFunc(prev, curr) {
             return prev + curr;
         }
-        var greeting = letters.reduce(reduceFunc);
+        
         console.log(greeting); 
         //hello
         
-        
+//__________________________________________________________________________________
+
+        /*
+        // 7
+        // Use reduce method to get the total by multiplying all
+        the numbers in the array. Store the result in a new
+        array. Print the result to the console.
+        var numbers = [ 100, 3, 4, 1, 2];
+        var total = numbers.reduce();
+        // result: 2400
+        */
         var numbers = [100,3,4,1,2];
+        var total = numbers.reduce(totalNum);
+        
         function totalNum(prev, curr) {
             return prev * curr;
         }
-        var total = numbers.reduce(totalNum);
+        
         console.log(total);
-        //2400
+        //Result: 2400
 
+//__________________________________________________________________________________
 
+        /*
+        // 8
+        // Use the reduce method to flatten this array of arrays (called a twodimensional array) to a single array. Research on the Array.concat()
+        method to achieve this. Store the result in a new array. Print the result to
+        the console.
+        var arrays = [["wise", "cries"], ["pies", "size"]];
+        var flattenedArray = arrays.reduce();
+        // result: ["wise", "cries", "pies", "size"]
+        */       
         var arrays = [["wise","cries"],["pies","size"]];
+        var flattenedArray = arrays.reduce(arrFunc);
+        
         function arrFunc(prev,curr) {
             return prev.concat(curr);
         }
-        var flattenedArray = arrays.reduce(arrFunc);
+        
         console.log(flattenedArray);
-        //(4) ['wise', 'cries', 'pies', 'size']
+        //Result: (4) ['wise', 'cries', 'pies', 'size']
     </script>
 </body>
 </html>
