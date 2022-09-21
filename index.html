@@ -27,6 +27,15 @@
         console.log(numbersAddFive);
         //Result: (5) [6, 6, 7, 8, 10]
 
+        
+        
+        //*** Revised/Shorter version:*** 
+        var numbers = [1,1,2,3,5];
+        var numbersAddFive = numbers.map(num => {
+            return num += 5; 
+        });
+        console.log(numbersAddFive); 
+
 //__________________________________________________________________________________
 
         /*
@@ -50,6 +59,15 @@
         console.log(numbersReformatted);
         //Result: (5) ['245:array item 1', '-799:array item 2', '550:array item 3', '312:array item 4', '967:array item 5']
 
+
+
+
+        //*** Revised/Shorter version:*** 
+        var numbers = [245, -799, 550, 312, 967];
+        var result = numbers.map((num,idx) => {
+            return num + ": array item " + ++idx;
+        });
+        console.log(result);
 //__________________________________________________________________________________
     
         /*
@@ -72,6 +90,15 @@
         console.log(petsShortNames);
         //Result: (2) ['dog', 'tiger']
 
+
+
+
+        //*** Revised/Shorter version:*** 
+        var pets = ["goldfish", "dog", "turtle", "tiger"];
+        var result = pets.filter(pet => {
+            return pet.length <= 5;
+        });
+        console.log(result);  
 //__________________________________________________________________________________
 
         /*
@@ -93,6 +120,15 @@
         console.log(petsShortNames);
         //Result: (2) ['turtle', 'tiger']
 
+
+
+
+        //*** Revised/Shorter version:*** 
+        var pets = ["goldfish", "dog", "turtle", "tiger"];
+        var results = pets.filter(pet => {
+            return pet.includes('t');
+        });
+        console.log(results);
 //__________________________________________________________________________________
 
         /*
@@ -113,6 +149,17 @@
         
         console.log(evenNumbers);
         //Result: (2) [4, 10]
+
+
+
+
+        //*** Revised/Shorter version:*** 
+        var numbers = [3,7,4,5,10];
+        var results = numbers.filter(num => {
+            return num % 2 === 0;
+        });
+        console.log(results);
+
 
 //__________________________________________________________________________________
 
@@ -136,6 +183,14 @@
         console.log(greeting); 
         //hello
         
+
+
+        //*** Revised/Shorter version:*** 
+        var letters = ['h', 'e', 'l', 'l', 'o'];
+        var result = letters.reduce((prev, curr) => {
+            return prev + curr;
+        });
+        console.log(result);
 //__________________________________________________________________________________
 
         /*
@@ -157,11 +212,21 @@
         console.log(total);
         //Result: 2400
 
+
+
+
+        //*** Revised/Shorter version:*** 
+        var numbers = [100,3,4,1,2];
+        var result = numbers.reduce((prev, curr) => {
+            return prev * curr;
+        });
+        console.log(result);  
 //__________________________________________________________________________________
 
         /*
         // 8
-        // Use the reduce method to flatten this array of arrays (called a twodimensional array) to a single array. Research on the Array.concat()
+        // Use the reduce method to flatten this array of arrays (called a 
+        two-dimensional array) to a single array. Research on the Array.concat() 
         method to achieve this. Store the result in a new array. Print the result to
         the console.
         var arrays = [["wise", "cries"], ["pies", "size"]];
@@ -177,6 +242,16 @@
         
         console.log(flattenedArray);
         //Result: (4) ['wise', 'cries', 'pies', 'size']
+
+
+
+
+        //*** Revised/Shorter version:***
+        var arrays = [["wise","cries"],["pies","size"]];
+        var result = arrays.reduce((prev, curr) => {
+            return prev.concat(curr);
+        });
+        console.log(result);
     </script>
 </body>
 </html>
